@@ -1,0 +1,33 @@
+.pizza {
+  margin: 1em;
+}
+
+.pizza .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.pizza .header h3 {
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.pizza .header .price {
+  background-color: green;
+  color: white;
+  font-size: large;
+  width: 5em;
+}
+
+.pizza .quantity {
+  display: flex;
+  justify-content: right;
+  padding: 1em;
+}
+
+.pizza .quantity p {
+  font-size: large;
+  width: 1em;
+  text-align: center;
+}

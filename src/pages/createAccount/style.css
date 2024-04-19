@@ -1,0 +1,42 @@
+.account {
+  width: 50em;
+  position: absolute;
+  top: 10em;
+  left: 50%;
+  padding: 0.5em;
+  transform: translate(-50%, 0);
+  border-radius: 1em !important;
+  background-color: #3b438b !important;
+}
+
+.account label {
+  color: #fbc02c !important;
+  font-size: larger;
+  width: 12em;
+  padding-top: 0.5rem;
+}
+
+.account input,
+.account textarea {
+  width: 20em;
+}
+
+div.input {
+  display: flex;
+  align-items: start;
+  width: 45%;
+}
+
+.account .error,
+.account .Mui-error {
+  color: #fbc02c !important;
+}
+
+.account form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 2em;
+  margin: auto;
+}

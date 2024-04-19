@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+button {
+  background-color: #fbc02c !important;
+  color: #3b438b !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button[disabled] {
+  background-color: lightgrey !important;
+  color: grey !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input,
+textarea {
+  background-color: white !important;
+  border-radius: 4px;
+  padding: 0.5rem !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Mui-error input {
+  color: red !important;
 }
 
-.App-link {
-  color: #61dafb;
+fieldset {
+  border: 0 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  margin-top: 50px;
+}
+
+h2 {
+  color: #3b438b;
+  font-size: xx-large !important;
+  font-weight: bold !important;
 }

@@ -1,0 +1,42 @@
+{
+  "common": {
+    "MarioS": "Mario's",
+    "connect": "Connect",
+    "loginPlaceholder": "Login",
+    "passwordPlaceholder": "Password",
+    "technicalError": "Technical error",
+    "loginError": "Connexion error"
+  },
+  "error": {
+    "required": "required",
+    "minLen": "at least {{field}} characters"
+  },
+  "order": {
+    "choosePizzas": "Select your pizzas",
+    "total": "Total: {{total}} €",
+    "success1": "Your order is being prepared.",
+    "success2": "It will be delivered within 30 minutes.",
+    "back": "Return to order page",
+    "validate": "Validate the order"
+  },
+  "account": {
+    "createAccount": "create an account"
+  },
+  "createAccount": {
+    "name": "First name",
+    "surname": "First name",
+    "password": "Password",
+    "repassword": "Confirmation",
+    "address": "Address",
+    "phonenumber": "Phone",
+    "lastname": "Name",
+    "firstname": "First name",
+    "submit": "Create",
+    "error": {
+      "passwordsDifferent": "The two passwords are not the same"
+    },
+    "title": "Create your customer account",
+    "congratulation": "Congratulations !",
+    "readyToOrder": "You are ready to order."
+  }
+}

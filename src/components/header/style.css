@@ -1,0 +1,27 @@
+h1 {
+  font-size: 2.5em !important;
+  color: #fbc02c;
+  font-weight: bold !important;
+}
+
+header.css-1r11njw-MuiPaper-root-MuiAppBar-root {
+  background-color: #3b438b;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.menu > div {
+  margin: 0 1em;
+}
+
+.css-1x4vipr-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
+  color: rgba(96, 96, 96, 0.75) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.css-1x4vipr-MuiButtonBase-root-MuiToggleButton-root {
+  color: rgba(255, 255, 255, 1) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}

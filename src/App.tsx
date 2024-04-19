@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Header from "./components/header";
+import { Route, Routes } from "react-router-dom";
+import AuthenticationService from "./services/AuthenticationService";
+import Login from "./pages/login";
+import OrderPage from "./pages/order";
+import CreateAccount from "./pages/createAccount";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
+    AuthenticationService.isAuthenticated()
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header
+        setIsAuthenticated={setIsAuthenticated}
+        isAuthenticated={isAuthenticated}
+      />
+      <main>
+        <Routes>
+          {isAuthenticated ? (
+            <Route path="/" Component={OrderPage} />
+          ) : (
+            <Route
+              path="/"
+              element={<Login setIsAuthenticated={setIsAuthenticated} />}
+            />
+          )}
+          <Route path="/createAccount" Component={CreateAccount} />
+        </Routes>
+      </main>
     </div>
   );
 }

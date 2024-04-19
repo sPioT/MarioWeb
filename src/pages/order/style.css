@@ -1,0 +1,44 @@
+.orderHeader .total {
+  font-size: x-large;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+.orderHeader {
+  background: white;
+  position: fixed;
+  top: 3.5em;
+  padding: 1em;
+  width: calc(100% - 2em);
+  z-index: 100;
+}
+
+.popin {
+  top: 0 !important;
+  background-color: rgba(96, 96, 96, 0.5);
+}
+
+.popin .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+  background-color: #3b438b;
+  color: #fbc02c;
+  text-align: center;
+  padding: 1em;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.popin p {
+  font-size: larger;
+}
+
+.popin .css-tzssek-MuiSvgIcon-root {
+  height: 5em;
+  width: 100%;
+}
+
+.popin a {
+  color: #fbc02c;
+  font-size: larger;
+}
