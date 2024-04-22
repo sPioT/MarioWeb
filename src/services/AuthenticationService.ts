@@ -36,14 +36,11 @@ export default class AuthenticationService {
   }
 
   static isAuthenticated(): boolean {
-    console.log(localStorage);
     if (localStorage.getItem("jwt") !== null) {
-      console.log(1);
       const expiration = localStorage.getItem("expiration");
 
       return expiration !== null && Date.parse(expiration) > Date.now();
     } else {
-      console.log(2);
       return false;
     }
   }
@@ -61,7 +58,9 @@ export default class AuthenticationService {
       body: JSON.stringify(account),
     });
 
-    if (response.ok) {
+    if (response.status === 409) {
+      throw new Error("Duplicate phonenumber");
+    } else if (response.ok) {
       return await response.json();
     }
   }

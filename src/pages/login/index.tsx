@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   InputAdornment,
@@ -8,7 +9,7 @@ import {
 
 import "./style.css";
 import { useFormik } from "formik";
-import { KeyOutlined, LoginOutlined } from "@mui/icons-material";
+import { ErrorOutline, KeyOutlined, LoginOutlined } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import * as yup from "yup";
@@ -64,7 +65,20 @@ const Login = ({ setIsAuthenticated }: Props) => {
 
   return (
     <Card className="login" elevation={10}>
-      <Typography className="error">{error}</Typography>
+      {error && (
+        <Box
+          className="error"
+          display="flex"
+          justifyContent={"center"}
+          alignItems="center"
+          width={"100%"}
+          gap="1em"
+          mb="1em"
+        >
+          <ErrorOutline fontSize="large" />
+          <Typography sx={{ fontSize: "x-large" }}>{error}</Typography>
+        </Box>
+      )}
       <form onSubmit={formik.handleSubmit}>
         <TextField
           placeholder={t("common.loginPlaceholder")}
@@ -101,6 +115,7 @@ const Login = ({ setIsAuthenticated }: Props) => {
           helperText={formik.touched.password && formik.errors.password}
         />
         <Link to="/createAccount">{t("account.createAccount")}</Link>
+
         <Button variant="contained" type="submit">
           {t("common.connect")}
         </Button>

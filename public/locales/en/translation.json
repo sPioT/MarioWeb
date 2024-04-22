@@ -37,6 +37,7 @@
     },
     "title": "Create your customer account",
     "congratulation": "Congratulations !",
-    "readyToOrder": "You are ready to order."
+    "readyToOrder": "You are ready to order.",
+    "duplicatePhonenumber": "The phone number is already in use"
   }
 }

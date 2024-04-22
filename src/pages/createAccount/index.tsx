@@ -16,11 +16,13 @@ import * as yup from "yup";
 import AuthenticationService from "../../services/AuthenticationService";
 import { Link } from "react-router-dom";
 import Account from "../../models/security/Account";
+import { ErrorOutline } from "@mui/icons-material";
 
 const CreateAccount = () => {
   const { t } = useTranslation();
 
   const [openPopin, setOpenPopin] = useState<boolean>(false);
+  const [error, setError] = useState<String>("");
 
   const schema = yup.object().shape({
     firstname: yup
@@ -86,7 +88,14 @@ const CreateAccount = () => {
         .then((ok: boolean) => {
           setOpenPopin(ok);
         })
-        .catch((reason) => {});
+        .catch((reason: Error) => {
+          if (reason.message === "Duplicate phonenumber") {
+            setError(t("createAccount.duplicatePhonenumber"));
+          } else {
+            setError(t("common.technicalError"));
+          }
+          console.log(reason.message);
+        });
     },
   });
 
@@ -100,6 +109,20 @@ const CreateAccount = () => {
     >
       <Typography variant="h2">{t("createAccount.title")}</Typography>
       <Card className="account" elevation={10}>
+        {error && (
+          <Box
+            className="error"
+            display="flex"
+            justifyContent={"center"}
+            alignItems="center"
+            width={"100%"}
+            gap="1em"
+            mb="1em"
+          >
+            <ErrorOutline fontSize="large" />
+            <Typography sx={{ fontSize: "x-large" }}>{error}</Typography>
+          </Box>
+        )}
         <form onSubmit={formik.handleSubmit}>
           <Box className="input">
             <InputLabel htmlFor="iLastname">
@@ -187,8 +210,7 @@ const CreateAccount = () => {
               onBlur={formik.handleBlur}
               value={formik.values.address}
               name="address"
-              maxRows={4}
-              variant="standard"
+              maxRows={3}
               error={formik.touched.address && Boolean(formik.errors.address)}
               helperText={formik.touched.address && formik.errors.address}
             />

@@ -38,6 +38,7 @@
     "title": "Créez votre compte client",
     "congratulation": "Félicitation !",
     "readyToOrder": "Vous êtes prêts à commander.",
-    "toOrder": "Passez votre première commande"
+    "toOrder": "Passez votre première commande",
+    "duplicatePhonenumber": "Le numéro de téléphone est déjà utilisé"
   }
 }
